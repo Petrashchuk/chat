@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Chat_container from "./Components/Chat_container/Chat_container";
 
 function App() {
-  return (
-    <div>
-
-    </div>
-  );
+    return (
+        <section className='wrapper'>
+            <Chat_container/>
+        </section>
+    );
 }
 
 export default App;
