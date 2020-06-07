@@ -38,7 +38,7 @@ class Chat_container extends React.PureComponent {
                 <footer>
                     <div className='footer-wrapper'>
                         <TextField onChange={e => this.setState({textValue: e.target.value})}
-                                   style={{width: "90%", marginLeft: 20, paddingTop: 10}} id="standard-basic"
+                                   style={{width: "94%", marginLeft: 20, paddingTop: 10}} id="standard-basic"
                                    label="Enter your message"/>
                         <FontAwesome handleClick={this.sendMessage} className={'fa fa-paper-plane'}
                                      style={iconStyle}/>
