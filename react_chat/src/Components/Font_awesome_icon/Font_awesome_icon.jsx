@@ -1,5 +1,5 @@
 import React from 'react';
-import './Chat_container/Chat_container_style.css';
+import '../Chat_container/Chat_container_style.css';
 
 export default function FontAwesome({handleClick,style,className}){
     return(
