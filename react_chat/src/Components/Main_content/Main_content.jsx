@@ -7,7 +7,7 @@ export default class Main_content extends React.PureComponent {
     }
 
     componentDidMount() {
-        this.connectSocket();
+        // this.connectSocket();
     }
 
     connectSocket = () => {
@@ -16,7 +16,7 @@ export default class Main_content extends React.PureComponent {
         };
         ws.onclose = e => {
             console.log('Close', e)
-        }
+        };
         ws.onmessage = msg => {
             console.log(msg);
         }
