@@ -1,35 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import './Header_style.css';
 import classNames from 'classnames';
-import ws from "../../services/socket";
+import {connect} from "react-redux";
 
-export default class Header extends React.PureComponent {
+class Header extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.state = {
-            status: false,
-            message: 'Disconnect'
-        }
     }
 
-    componentDidMount() {
-        this.connectSocket();
-    }
-
-    connectSocket = () => {
-        ws.onopen = () => this.setState({status: true, message: 'Online'});
-        ws.onclose = () => this.setState({status: false, message: 'Disconnect'});
-        ws.onmessage = msg => {
-            console.log(msg);
-        }
-    };
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log(prevState);
-    }
 
     render() {
-        const {status, message} = this.state;
+        const {stateWs: {message, status}} = this.props;
         return (
             <header>
                 <div className=' header_section'>
@@ -40,3 +21,11 @@ export default class Header extends React.PureComponent {
         )
     }
 }
+
+function mapStateToProps({stateWs}) {
+    return {
+        stateWs
+    }
+}
+
+export default connect(mapStateToProps, null)(Header)

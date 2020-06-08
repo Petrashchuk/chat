@@ -1,0 +1,36 @@
+.li-style {
+    color: #FBFBFB;
+    list-style: none;
+    border-radius: 30px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.even {
+    background-color: blue;
+}
+
+.odd {
+    background-color: #777777;
+}
+
+.main-content {
+    overflow-x: hidden;
+}
+
+.overflow_yes {
+    overflow-y: scroll;
+}
+
+.div_right {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.div_left {
+    display: flex;
+    /*justify-content: flex-end;*/
+    /*margin-right: 20px;*/
+}

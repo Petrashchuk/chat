@@ -3,6 +3,7 @@
     height: 85%;
     background-color: #EEEEEE;
     margin: 50px auto;
+    position: relative;
 }
 
 .main-content {
