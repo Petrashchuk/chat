@@ -1,8 +1,17 @@
 const WebSocket = require('ws');
 
 
-const server = new WebSocket.Server({port: 8080});
+const server = new WebSocket.Server({port: 8080}, () => {
+    console.log('Server listening on port 8080!');
+});
 
-server.on('conntection', ws => {
+server.on('connection', ws => {
+    ws.on('message', message => {
+        server.clients.forEach(client => {
+            if (client.readyState === WebSocket.OPEN) {
+                client.send(message);
+            };
+        })
+    });
     ws.send('Добро пожаловать')
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Chat_container_style.css';
 import 'font-awesome/css/font-awesome.min.css';
-
+import ws from '../../services/socket';
 import Footer from '../Footer/Footer'
 import Main_content from '../Main_content/Main_content'
 import Header from "../Header/Header";
@@ -21,7 +21,7 @@ export default class Chat_container extends React.PureComponent {
     }
 
     sendMessage = (message) => {
-        console.log(message);
+        ws.send(message);
     };
 
     render() {
